@@ -1,0 +1,21 @@
+image: maven:latest
+
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - package
+
+build_job:       # This job runs in the build stage, which runs first.
+  stage: build
+
+
+  script:
+    - echo "Maven compile started"
+    - "mvn -f calculator/ compile"
+
+test_job:
+  stage: test
+
+  script:
+    - echo "Maven test started"
+    - "mvn -f calculator/ test"

@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: calculator-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /api/v1/calculator/operations
+            pathType: Prefix
+            backend:
+              service:
+                name: calculator-service
+                port:
+                  number: 21500
+          - path: /api/v1/calculator
+            pathType: Prefix
+            backend:
+              service:
+                name: calculator-service
+                port:
+                  number: 21500

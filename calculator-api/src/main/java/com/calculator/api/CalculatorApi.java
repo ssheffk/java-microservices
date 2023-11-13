@@ -1,0 +1,14 @@
+package com.calculator.api;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+@SpringBootApplication
+public class CalculatorApi {
+
+  public static void main(String[] args) {
+    SpringApplication.run(CalculatorApi.class, args);
+  }
+
+}
